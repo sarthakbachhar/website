@@ -1,72 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Webpage</title>
-    <style>
-        /* Basic styles for the page */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-        }
-
-        .container {
-            background-color: #fff;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            font-size: 24px;
-            color: #333;
-        }
-
-        button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 15px 32px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
-        }
-
-        button:hover {
-            background-color: #45a049;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <h1 class="logo">MyPortfolio</h1>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <div class="container">
-        <h1>Welcome to My Simple Webpage</h1>
-        <button id="colorButton">Change Background Color</button>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Hello, I'm <span>Your Name</span></h2>
+      <p>Aspiring Cybersecurity Student & Developer</p>
+      <button onclick="scrollToSection('projects')">View My Work</button>
     </div>
+  </section>
 
-    <script>
-        // Select the button element
-        const colorButton = document.getElementById("colorButton");
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>
+      I'm a cybersecurity and digital forensics student passionate about building secure systems, 
+      exploring vulnerabilities, and creating meaningful projects.
+    </p>
+  </section>
 
-        // Add event listener to change background color when clicked
-        colorButton.addEventListener("click", function() {
-            // Array of possible colors
-            const colors = ["#FF6347", "#3CB371", "#1E90FF", "#FFD700", "#8A2BE2"];
-            // Randomly select a color from the array
-            const randomColor = colors[Math.floor(Math.random() * colors.length)];
-            // Change the background color
-            document.body.style.backgroundColor = randomColor;
-        });
-    </script>
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <div class="project-list">
+      <div class="project-card">
+        <h3>IoT Door Lock</h3>
+        <p>RFID & ESP32-based smart door lock with Telegram alerts.</p>
+      </div>
+      <div class="project-card">
+        <h3>Automated Vulnerability Scanner</h3>
+        <p>Built using OpenVAS for scanning and reporting.</p>
+      </div>
+      <div class="project-card">
+        <h3>Portfolio Website</h3>
+        <p>This personal website to showcase my work and skills.</p>
+      </div>
+    </div>
+  </section>
 
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Your Name. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
