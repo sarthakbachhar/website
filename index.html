@@ -1,77 +1,474 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarthak Bachhar | Cybersecurity Portfolio</title>
+    <meta name="description" content="Portfolio of Sarthak Bachhar, a Cybersecurity & Digital Forensics student specializing in threat detection, networking, and security tools.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <nav>
-      <h1 class="logo">MyPortfolio</h1>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-text">
-      <h2>Hello, I'm <span>Your Name</span></h2>
-      <p>Aspiring Cybersecurity Student & Developer</p>
-      <button onclick="scrollToSection('projects')">View My Work</button>
+    <!-- Background Animation Elements -->
+    <div class="bg-elements">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+        <div class="grid-overlay"></div>
     </div>
-  </section>
 
-  <!-- About Section -->
-  <section id="about" class="about">
-    <h2>About Me</h2>
-    <p>
-      I'm a cybersecurity and digital forensics student passionate about building secure systems, 
-      exploring vulnerabilities, and creating meaningful projects.
-    </p>
-  </section>
+    <!-- Navigation -->
+    <header class="glass-nav">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-bracket">[</span>sb<span class="logo-cursor">_</span><span class="logo-bracket">]</span>
+            </a>
+            
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
 
-  <!-- Projects Section -->
-  <section id="projects" class="projects">
-    <h2>Projects</h2>
-    <div class="project-list">
-      <div class="project-card">
-        <h3>IoT Door Lock</h3>
-        <p>RFID & ESP32-based smart door lock with Telegram alerts.</p>
-      </div>
-      <div class="project-card">
-        <h3>Automated Vulnerability Scanner</h3>
-        <p>Built using OpenVAS for scanning and reporting.</p>
-      </div>
-      <div class="project-card">
-        <h3>Portfolio Website</h3>
-        <p>This personal website to showcase my work and skills.</p>
-      </div>
-    </div>
-  </section>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                </ul>
+                <a href="#contact" class="btn btn-outline">Let's Connect</a>
+            </nav>
+        </div>
+    </header>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <h2>Contact Me</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit">Send</button>
-    </form>
-  </section>
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero section">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="terminal-badge">
+                        <i class="fas fa-terminal terminal-icon"></i>
+                        <span>System.out.println("Hello, World!");</span>
+                    </div>
+                    <h1 class="hero-title">
+                        I'm <span class="highlight">Sarthak Bachhar</span><br>
+                        <span class="typewriter-text" id="typewriter"></span><span class="cursor">|</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Final year Cybersecurity & Digital Forensics student passionate about securing networks, hunting threats, and building resilient systems.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary">
+                            <span>View Projects</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <div class="social-links">
+                            <a href="#" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-icon" aria-label="TryHackMe"><i class="fas fa-desktop"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="cyber-shield glass-card">
+                        <div class="shield-inner">
+                            <i class="fas fa-shield-halved"></i>
+                        </div>
+                        <div class="floating-badge badge-1">Securing The Future</div>
+                        <div class="floating-badge badge-2">Access Granted</div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Your Name. All rights reserved.</p>
-  </footer>
+        <!-- About Section -->
+        <section id="about" class="about section bg-alt">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">About <span class="highlight">Me</span></h2>
+                    <div class="title-line"></div>
+                </div>
+                <div class="about-grid">
+                    <div class="about-text glass-card">
+                        <p class="lead">
+                            I am a Cybersecurity & Digital Forensics student (BSc Hons) at the University of the West of England, studying at The British College, Kathmandu.
+                        </p>
+                        <p>
+                            Driven by a curiosity for how systems work—and how they break—I specialize in network analysis, vulnerability assessment, and digital forensics. My approach combines technical rigor with a strong understanding of Governance, Risk, and Compliance (GRC).
+                        </p>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <span class="stat-number">2026</span>
+                                <span class="stat-label">Graduation Year</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">6+</span>
+                                <span class="stat-label">Certifications</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">3</span>
+                                <span class="stat-label">Languages (Bash, Python, C++)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Education Details inside about section -->
+                    <div class="education-card glass-card accent-border">
+                        <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <h3>BSc. (Hons) Cyber Security & Digital Forensics</h3>
+                        <p class="edu-date">Feb 2023 – Sept 2026</p>
+                        <p class="edu-institution">University of the West of England / The British College</p>
+                        <div class="edu-modules">
+                            <strong>Relevant Modules:</strong>
+                            <div class="module-tags">
+                                <span class="tag">Network Security</span>
+                                <span class="tag">Digital Forensics</span>
+                                <span class="tag">Incident Response</span>
+                                <span class="tag">Security Tools</span>
+                                <span class="tag">Operating Systems</span>
+                                <span class="tag">GRC Practices</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <script src="script.js"></script>
+        <!-- Skills Section -->
+        <section id="skills" class="skills section border-top-glow">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Technical <span class="highlight">Arsenal</span></h2>
+                    <div class="title-line"></div>
+                </div>
+                <div class="skills-grid">
+                    
+                    <div class="skill-category glass-card">
+                        <div class="category-header">
+                            <i class="fas fa-shield-virus skill-icon"></i>
+                            <h3>Cybersecurity & Forensics</h3>
+                        </div>
+                        <ul class="skill-list">
+                            <li>Traffic Analysis</li>
+                            <li>Audit Documentation</li>
+                            <li>Security Controls Assessment</li>
+                            <li>SIEM (Basics)</li>
+                            <li>Threat Detection</li>
+                            <li>Digital Forensics</li>
+                            <li>Vulnerability Assessment</li>
+                            <li>Incident Reporting</li>
+                            <li>GRC & Compliance</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category glass-card">
+                        <div class="category-header">
+                            <i class="fas fa-network-wired skill-icon"></i>
+                            <h3>Networking & Systems</h3>
+                        </div>
+                        <ul class="skill-list">
+                            <li>TCP/IP Protocols</li>
+                            <li>DNS & DHCP</li>
+                            <li>Linux Administration</li>
+                            <li>Network Troubleshooting</li>
+                            <li>IP Addressing & Subnetting</li>
+                            <li>Virtualization (VMware/VirtualBox)</li>
+                            <li>Windows OS Internals</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category glass-card">
+                        <div class="category-header">
+                            <i class="fas fa-toolbox skill-icon"></i>
+                            <h3>Tools & Tech Stack</h3>
+                        </div>
+                        <div class="tool-tags">
+                            <span class="tool-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" class="tech-icon"/> Linux</span>
+                            <span class="tool-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash" class="tech-icon"/> Bash</span>
+                            <span class="tool-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="tech-icon"/> Python</span>
+                            <span class="tool-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" class="tech-icon"/> C++</span>
+                            <span class="tool-tag"><i class="fab fa-git-alt tech-icon" style="color: #f34f29;"></i> Git</span>
+                        </div>
+                        <div class="sec-tools-list">
+                            <h4>Security Tools</h4>
+                            <p>Nmap, Wireshark, Lynis, Nessus, OpenVAS, Burp Suite, Autopsy, Kali Linux</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="experience section bg-alt">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Professional <span class="highlight">Experience</span></h2>
+                    <div class="title-line"></div>
+                </div>
+                
+                <div class="timeline">
+                    <!-- Exp 1 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass-card hover-glow">
+                            <div class="exp-header">
+                                <div>
+                                    <h3 class="role">Security Analyst Intern</h3>
+                                    <h4 class="company">N9 Solution <span class="location"><i class="fas fa-map-marker-alt"></i> Kathmandu</span></h4>
+                                </div>
+                                <div class="exp-date">July 2025 – Oct. 2025</div>
+                            </div>
+                            <ul class="exp-details">
+                                <li>Supported network and system assessments in small-scale LAN environments.</li>
+                                <li>Performed network scanning, port analysis, and service discovery using <strong>Nmap</strong>.</li>
+                                <li>Analyzed network traffic using <strong>Wireshark</strong> to identify anomalies and misconfigurations.</li>
+                                <li>Assisted with IP-based access checks, firewall rule validation, and network hardening tasks.</li>
+                                <li>Worked extensively with Linux systems for log monitoring, service analysis, and access control verification.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Exp 2 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass-card hover-glow">
+                            <div class="exp-header">
+                                <div>
+                                    <h3 class="role">Machine Learning Trainee</h3>
+                                    <h4 class="company">The Legalities <span class="location"><i class="fas fa-map-marker-alt"></i> Kathmandu</span></h4>
+                                </div>
+                                <div class="exp-date">Sept. 2024 – Dec. 2024</div>
+                            </div>
+                            <ul class="exp-details">
+                                <li>Worked on image-processing and OCR systems with strong focus on data integrity, model reliability and secure processing flows.</li>
+                                <li>Improved accuracy of recognition systems while validating data quality and edge-case detection.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects section border-top-glow">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Featured <span class="highlight">Projects</span></h2>
+                    <div class="title-line"></div>
+                </div>
+                
+                <div class="project-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card glass-card group">
+                        <div class="project-content">
+                            <div class="project-top">
+                                <i class="fas fa-file-shield project-icon"></i>
+                                <div class="project-links">
+                                    <a href="#" class="btn-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                                    <a href="#" class="btn-icon" aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                                </div>
+                            </div>
+                            <h3 class="project-title">Automated GRC Audit & Compliance App</h3>
+                            <p class="project-date">July 2025 – Present</p>
+                            <p class="project-desc">Built an audit automation system handling controls, evidence, risk scoring, and reporting.</p>
+                            <div class="project-tech">
+                                <span>Automation</span>
+                                <span>Risk Scoring</span>
+                                <span>Compliance</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card glass-card group">
+                        <div class="project-content">
+                            <div class="project-top">
+                                <i class="fas fa-shield-virus project-icon"></i>
+                                <div class="project-links">
+                                    <a href="#" class="btn-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                            <h3 class="project-title">Secure CI/CD Pipeline</h3>
+                            <p class="project-date">July 2025</p>
+                            <p class="project-desc">Implemented SAST (Static Application Security Testing), dependency scanning, and container security using GitHub Actions.</p>
+                            <div class="project-tech">
+                                <span>GitHub Actions</span>
+                                <span>SAST</span>
+                                <span>DevSecOps</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card glass-card group">
+                        <div class="project-content">
+                            <div class="project-top">
+                                <i class="fas fa-brain project-icon"></i>
+                                <div class="project-links">
+                                    <a href="#" class="btn-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                            <h3 class="project-title">Machine Learning Pipelines</h3>
+                            <p class="project-date">Sept. 2024 (The Legalities)</p>
+                            <p class="project-desc">Created OCR (Optical Character Recognition), license plate recognition, and NLP processing pipelines focusing on data integrity.</p>
+                            <div class="project-tech">
+                                <span>Python</span>
+                                <span>OCR</span>
+                                <span>NLP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="view-more-container">
+                    <a href="#" class="btn btn-outline" style="margin-top: 2rem;">
+                        <i class="fab fa-github"></i> View more on GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="certifications section bg-alt">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Licenses & <span class="highlight">Certifications</span></h2>
+                    <div class="title-line"></div>
+                </div>
+                
+                <div class="cert-grid">
+                    <div class="cert-card glass-card">
+                        <div class="cert-icon"><i class="fas fa-user-secret"></i></div>
+                        <div class="cert-info">
+                            <h4>Junior Penetration Tester</h4>
+                            <p>TryHackMe · 2024</p>
+                        </div>
+                    </div>
+                    
+                    <div class="cert-card glass-card">
+                        <div class="cert-icon"><i class="fab fa-aws"></i></div>
+                        <div class="cert-info">
+                            <h4>AWS Security Fundamentals</h4>
+                            <p>Amazon Web Services · 2025</p>
+                        </div>
+                    </div>
+
+                    <div class="cert-card glass-card">
+                        <div class="cert-icon"><i class="fab fa-aws"></i></div>
+                        <div class="cert-info">
+                            <h4>AWS Cloud Practitioner Essentials</h4>
+                            <p>Amazon Web Services · 2025</p>
+                        </div>
+                    </div>
+                    
+                    <div class="cert-card glass-card">
+                        <div class="cert-icon"><i class="fas fa-search"></i></div>
+                        <div class="cert-info">
+                            <h4>Digital Forensics Essentials (DFE)</h4>
+                            <p>EC-Council · 2023</p>
+                        </div>
+                    </div>
+
+                    <div class="cert-card glass-card">
+                        <div class="cert-icon"><i class="fas fa-bug"></i></div>
+                        <div class="cert-info">
+                            <h4>Ethical Hacking Essentials (EHE)</h4>
+                            <p>EC-Council · 2023</p>
+                        </div>
+                    </div>
+
+                    <div class="cert-card glass-card">
+                        <div class="cert-icon"><i class="fas fa-briefcase"></i></div>
+                        <div class="cert-info">
+                            <h4>Tata - Cybersecurity Analyst</h4>
+                            <p>Forage Job Simulation · 2025</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact section border-top-glow">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Initiate <span class="highlight">Connection</span></h2>
+                    <p class="section-subtitle">Looking for a determined junior security analyst? Let's talk.</p>
+                </div>
+                
+                <div class="contact-wrapper">
+                    <div class="contact-info glass-card">
+                        <h3>Contact Information</h3>
+                        <p class="mb-4">Feel free to reach out for collaborations, job opportunities, or just to talk about cybersecurity.</p>
+                        
+                        <div class="contact-methods">
+                            <div class="method">
+                                <div class="method-icon"><i class="fas fa-envelope"></i></div>
+                                <div class="method-text">
+                                    <p class="label">Email Address</p>
+                                    <a href="mailto:contact@example.com">hello@sarthakbachhar.com</a>
+                                </div>
+                            </div>
+                            <div class="method">
+                                <div class="method-icon"><i class="fas fa-map-marker-alt"></i></div>
+                                <div class="method-text">
+                                    <p class="label">Location</p>
+                                    <p>Kathmandu, Nepal</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="social-links mt-4">
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+
+                    <form class="contact-form glass-card">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" placeholder="john@company.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" class="form-control" placeholder="Project Inquiry" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control" rows="5" placeholder="Your message here..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-full shadow-glow">
+                            <span>Send Transmission</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <span class="logo-bracket">[</span>sb<span class="logo-cursor">_</span><span class="logo-bracket">]</span>
+            </div>
+            <p class="copyright">&copy; <span id="year">2026</span> Sarthak Bachhar. All systems operational.</p>
+            <div class="footer-bottom-links">
+                <a href="#">GitHub</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
