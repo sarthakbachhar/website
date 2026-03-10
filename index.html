@@ -1,34 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sarthak Bachhar | Cybersecurity Portfolio</title>
-    <meta name="description" content="Portfolio of Sarthak Bachhar, a Cybersecurity & Digital Forensics student specializing in threat detection, networking, and security tools.">
+    <meta name="description"
+        content="Portfolio of Sarthak Bachhar, a Cybersecurity & Digital Forensics student specializing in threat detection, networking, and security tools.">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
 
-    <!-- Background Animation Elements -->
+    <!-- Background Elements -->
     <div class="bg-elements">
-        <div class="glow-orb orb-1"></div>
-        <div class="glow-orb orb-2"></div>
-        <div class="grid-overlay"></div>
+        <div class="accent-blob blob-1"></div>
+        <div class="accent-blob blob-2"></div>
     </div>
 
     <!-- Navigation -->
     <header class="glass-nav">
         <div class="nav-container">
             <a href="#" class="logo">
-                <span class="logo-bracket">[</span>sb<span class="logo-cursor">_</span><span class="logo-bracket">]</span>
+                <span class="logo-bracket">[</span>sarthak_bachhar<span class="logo-cursor">_</span><span
+                    class="logo-bracket">]</span>
             </a>
-            
+
             <div class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
             </div>
@@ -42,6 +47,9 @@
                     <li><a href="#certifications" class="nav-link">Certifications</a></li>
                 </ul>
                 <a href="#contact" class="btn btn-outline">Let's Connect</a>
+                <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
             </nav>
         </div>
     </header>
@@ -51,16 +59,15 @@
         <section id="hero" class="hero section">
             <div class="container hero-container">
                 <div class="hero-content">
-                    <div class="terminal-badge">
-                        <i class="fas fa-terminal terminal-icon"></i>
-                        <span>System.out.println("Hello, World!");</span>
+                    <div class="intro-badge">
+                        <span>Available for work</span>
                     </div>
                     <h1 class="hero-title">
-                        I'm <span class="highlight">Sarthak Bachhar</span><br>
-                        <span class="typewriter-text" id="typewriter"></span><span class="cursor">|</span>
+                        <span class="typewriter-text" id="typewriter">Cybersecurity & Forensics Student</span>
                     </h1>
                     <p class="hero-subtitle">
-                        Final year Cybersecurity & Digital Forensics student passionate about securing networks, hunting threats, and building resilient systems.
+                        Final year Cybersecurity & Digital Forensics student passionate about securing networks, hunting
+                        threats, and building resilient systems.
                     </p>
                     <div class="hero-actions">
                         <a href="#projects" class="btn btn-primary">
@@ -75,12 +82,10 @@
                     </div>
                 </div>
                 <div class="hero-visual">
-                    <div class="cyber-shield glass-card">
-                        <div class="shield-inner">
-                            <i class="fas fa-shield-halved"></i>
+                    <div class="profile-abstract glass-card">
+                        <div class="abstract-inner">
+                            <i class="fas fa-shield-alt"></i>
                         </div>
-                        <div class="floating-badge badge-1">Securing The Future</div>
-                        <div class="floating-badge badge-2">Access Granted</div>
                     </div>
                 </div>
             </div>
@@ -96,10 +101,14 @@
                 <div class="about-grid">
                     <div class="about-text glass-card">
                         <p class="lead">
-                            I am a Cybersecurity & Digital Forensics student (BSc Hons) at the University of the West of England, studying at The British College, Kathmandu.
+                            Hi, I'm Sarthak! I'm currently pursuing my BSc (Hons) in Cybersecurity & Digital Forensics
+                            at the University of the West of England, based at The British College in Kathmandu.
                         </p>
                         <p>
-                            Driven by a curiosity for how systems work—and how they break—I specialize in network analysis, vulnerability assessment, and digital forensics. My approach combines technical rigor with a strong understanding of Governance, Risk, and Compliance (GRC).
+                            I love figuring out how networks operate and finding ways to secure them. My studies have
+                            focused on network analysis, vulnerability assessment, and digital forensics, while keeping
+                            a close eye on the rules of Governance, Risk, and Compliance (GRC). I'm always eager to
+                            learn more and apply my skills to real-world security challenges.
                         </p>
                         <div class="stats-grid">
                             <div class="stat-item">
@@ -142,11 +151,11 @@
         <section id="skills" class="skills section border-top-glow">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Technical <span class="highlight">Arsenal</span></h2>
+                    <h2 class="section-title">Technical <span class="highlight">Skills</span></h2>
                     <div class="title-line"></div>
                 </div>
                 <div class="skills-grid">
-                    
+
                     <div class="skill-category glass-card">
                         <div class="category-header">
                             <i class="fas fa-shield-virus skill-icon"></i>
@@ -187,11 +196,20 @@
                             <h3>Tools & Tech Stack</h3>
                         </div>
                         <div class="tool-tags">
-                            <span class="tool-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" class="tech-icon"/> Linux</span>
-                            <span class="tool-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash" class="tech-icon"/> Bash</span>
-                            <span class="tool-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="tech-icon"/> Python</span>
-                            <span class="tool-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" class="tech-icon"/> C++</span>
-                            <span class="tool-tag"><i class="fab fa-git-alt tech-icon" style="color: #f34f29;"></i> Git</span>
+                            <span class="tool-tag"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
+                                    alt="Linux" class="tech-icon" /> Linux</span>
+                            <span class="tool-tag"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg"
+                                    alt="Bash" class="tech-icon" /> Bash</span>
+                            <span class="tool-tag"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                                    alt="Python" class="tech-icon" /> Python</span>
+                            <span class="tool-tag"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
+                                    alt="C++" class="tech-icon" /> C++</span>
+                            <span class="tool-tag"><i class="fab fa-git-alt tech-icon" style="color: #f34f29;"></i>
+                                Git</span>
                         </div>
                         <div class="sec-tools-list">
                             <h4>Security Tools</h4>
@@ -210,7 +228,7 @@
                     <h2 class="section-title">Professional <span class="highlight">Experience</span></h2>
                     <div class="title-line"></div>
                 </div>
-                
+
                 <div class="timeline">
                     <!-- Exp 1 -->
                     <div class="timeline-item">
@@ -219,16 +237,22 @@
                             <div class="exp-header">
                                 <div>
                                     <h3 class="role">Security Analyst Intern</h3>
-                                    <h4 class="company">N9 Solution <span class="location"><i class="fas fa-map-marker-alt"></i> Kathmandu</span></h4>
+                                    <h4 class="company">N9 Solution <span class="location"><i
+                                                class="fas fa-map-marker-alt"></i> Kathmandu</span></h4>
                                 </div>
                                 <div class="exp-date">July 2025 – Oct. 2025</div>
                             </div>
                             <ul class="exp-details">
                                 <li>Supported network and system assessments in small-scale LAN environments.</li>
-                                <li>Performed network scanning, port analysis, and service discovery using <strong>Nmap</strong>.</li>
-                                <li>Analyzed network traffic using <strong>Wireshark</strong> to identify anomalies and misconfigurations.</li>
-                                <li>Assisted with IP-based access checks, firewall rule validation, and network hardening tasks.</li>
-                                <li>Worked extensively with Linux systems for log monitoring, service analysis, and access control verification.</li>
+                                <li>Performed network scanning, port analysis, and service discovery using
+                                    <strong>Nmap</strong>.
+                                </li>
+                                <li>Analyzed network traffic using <strong>Wireshark</strong> to identify anomalies and
+                                    misconfigurations.</li>
+                                <li>Assisted with IP-based access checks, firewall rule validation, and network
+                                    hardening tasks.</li>
+                                <li>Worked extensively with Linux systems for log monitoring, service analysis, and
+                                    access control verification.</li>
                             </ul>
                         </div>
                     </div>
@@ -240,13 +264,16 @@
                             <div class="exp-header">
                                 <div>
                                     <h3 class="role">Machine Learning Trainee</h3>
-                                    <h4 class="company">The Legalities <span class="location"><i class="fas fa-map-marker-alt"></i> Kathmandu</span></h4>
+                                    <h4 class="company">The Legalities <span class="location"><i
+                                                class="fas fa-map-marker-alt"></i> Kathmandu</span></h4>
                                 </div>
                                 <div class="exp-date">Sept. 2024 – Dec. 2024</div>
                             </div>
                             <ul class="exp-details">
-                                <li>Worked on image-processing and OCR systems with strong focus on data integrity, model reliability and secure processing flows.</li>
-                                <li>Improved accuracy of recognition systems while validating data quality and edge-case detection.</li>
+                                <li>Worked on image-processing and OCR systems with strong focus on data integrity,
+                                    model reliability and secure processing flows.</li>
+                                <li>Improved accuracy of recognition systems while validating data quality and edge-case
+                                    detection.</li>
                             </ul>
                         </div>
                     </div>
@@ -261,7 +288,7 @@
                     <h2 class="section-title">Featured <span class="highlight">Projects</span></h2>
                     <div class="title-line"></div>
                 </div>
-                
+
                 <div class="project-grid">
                     <!-- Project 1 -->
                     <div class="project-card glass-card group">
@@ -270,12 +297,14 @@
                                 <i class="fas fa-file-shield project-icon"></i>
                                 <div class="project-links">
                                     <a href="#" class="btn-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                                    <a href="#" class="btn-icon" aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                                    <a href="#" class="btn-icon" aria-label="Live Demo"><i
+                                            class="fas fa-external-link-alt"></i></a>
                                 </div>
                             </div>
                             <h3 class="project-title">Automated GRC Audit & Compliance App</h3>
                             <p class="project-date">July 2025 – Present</p>
-                            <p class="project-desc">Built an audit automation system handling controls, evidence, risk scoring, and reporting.</p>
+                            <p class="project-desc">Built an audit automation system handling controls, evidence, risk
+                                scoring, and reporting.</p>
                             <div class="project-tech">
                                 <span>Automation</span>
                                 <span>Risk Scoring</span>
@@ -295,7 +324,8 @@
                             </div>
                             <h3 class="project-title">Secure CI/CD Pipeline</h3>
                             <p class="project-date">July 2025</p>
-                            <p class="project-desc">Implemented SAST (Static Application Security Testing), dependency scanning, and container security using GitHub Actions.</p>
+                            <p class="project-desc">Implemented SAST (Static Application Security Testing), dependency
+                                scanning, and container security using GitHub Actions.</p>
                             <div class="project-tech">
                                 <span>GitHub Actions</span>
                                 <span>SAST</span>
@@ -315,7 +345,8 @@
                             </div>
                             <h3 class="project-title">Machine Learning Pipelines</h3>
                             <p class="project-date">Sept. 2024 (The Legalities)</p>
-                            <p class="project-desc">Created OCR (Optical Character Recognition), license plate recognition, and NLP processing pipelines focusing on data integrity.</p>
+                            <p class="project-desc">Created OCR (Optical Character Recognition), license plate
+                                recognition, and NLP processing pipelines focusing on data integrity.</p>
                             <div class="project-tech">
                                 <span>Python</span>
                                 <span>OCR</span>
@@ -339,7 +370,7 @@
                     <h2 class="section-title">Licenses & <span class="highlight">Certifications</span></h2>
                     <div class="title-line"></div>
                 </div>
-                
+
                 <div class="cert-grid">
                     <div class="cert-card glass-card">
                         <div class="cert-icon"><i class="fas fa-user-secret"></i></div>
@@ -348,7 +379,7 @@
                             <p>TryHackMe · 2024</p>
                         </div>
                     </div>
-                    
+
                     <div class="cert-card glass-card">
                         <div class="cert-icon"><i class="fab fa-aws"></i></div>
                         <div class="cert-info">
@@ -364,7 +395,7 @@
                             <p>Amazon Web Services · 2025</p>
                         </div>
                     </div>
-                    
+
                     <div class="cert-card glass-card">
                         <div class="cert-icon"><i class="fas fa-search"></i></div>
                         <div class="cert-info">
@@ -396,21 +427,22 @@
         <section id="contact" class="contact section border-top-glow">
             <div class="container">
                 <div class="section-header text-center">
-                    <h2 class="section-title">Initiate <span class="highlight">Connection</span></h2>
-                    <p class="section-subtitle">Looking for a determined junior security analyst? Let's talk.</p>
+                    <h2 class="section-title">Get in <span class="highlight">Touch</span></h2>
+                    <p class="section-subtitle">Looking for a determined junior security analyst? Let's connect.</p>
                 </div>
-                
+
                 <div class="contact-wrapper">
                     <div class="contact-info glass-card">
                         <h3>Contact Information</h3>
-                        <p class="mb-4">Feel free to reach out for collaborations, job opportunities, or just to talk about cybersecurity.</p>
-                        
+                        <p class="mb-4">Feel free to reach out for collaborations, job opportunities, or just to talk
+                            about cybersecurity.</p>
+
                         <div class="contact-methods">
                             <div class="method">
                                 <div class="method-icon"><i class="fas fa-envelope"></i></div>
                                 <div class="method-text">
                                     <p class="label">Email Address</p>
-                                    <a href="mailto:contact@example.com">hello@sarthakbachhar.com</a>
+                                    <a href="mailto:sarthakbachhar7@gmail.com">sarthakbachhar7@gmail.com</a>
                                 </div>
                             </div>
                             <div class="method">
@@ -432,11 +464,12 @@
                     <form class="contact-form glass-card">
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" id="name" class="form-control" placeholder="John Doe" required>
+                            <input type="text" id="name" class="form-control" placeholder="Aarav Sharma" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" class="form-control" placeholder="john@company.com" required>
+                            <input type="email" id="email" class="form-control" placeholder="aarav@example.com"
+                                required>
                         </div>
                         <div class="form-group">
                             <label for="subject">Subject</label>
@@ -444,10 +477,11 @@
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea id="message" class="form-control" rows="5" placeholder="Your message here..." required></textarea>
+                            <textarea id="message" class="form-control" rows="5" placeholder="Your message here..."
+                                required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary w-full shadow-glow">
-                            <span>Send Transmission</span>
+                            <span>Send Message</span>
                             <i class="fas fa-paper-plane"></i>
                         </button>
                     </form>
@@ -459,9 +493,10 @@
     <footer class="glass-footer">
         <div class="container footer-content">
             <div class="footer-logo">
-                <span class="logo-bracket">[</span>sb<span class="logo-cursor">_</span><span class="logo-bracket">]</span>
+                <span class="logo-bracket">[</span>sarthak_bachhar<span class="logo-cursor">_</span><span
+                    class="logo-bracket">]</span>
             </div>
-            <p class="copyright">&copy; <span id="year">2026</span> Sarthak Bachhar. All systems operational.</p>
+            <p class="copyright">&copy; <span id="year">2026</span> Sarthak Bachhar. All rights reserved.</p>
             <div class="footer-bottom-links">
                 <a href="#">GitHub</a>
                 <a href="#">LinkedIn</a>
@@ -469,6 +504,8 @@
         </div>
     </footer>
 
+    <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
     <script src="script.js"></script>
 </body>
+
 </html>

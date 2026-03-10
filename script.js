@@ -10,7 +10,7 @@ window.addEventListener('scroll', () => {
     } else {
         navbar.classList.remove('scrolled');
     }
-    
+
     // Active link switching based on scroll position
     let current = '';
     const sections = document.querySelectorAll('section');
@@ -34,7 +34,7 @@ window.addEventListener('scroll', () => {
 mobileBtn.addEventListener('click', () => {
     navLinks.classList.toggle('active');
     const icon = mobileBtn.querySelector('i');
-    if(navLinks.classList.contains('active')){
+    if (navLinks.classList.contains('active')) {
         icon.classList.remove('fa-bars');
         icon.classList.add('fa-times');
     } else {
@@ -56,7 +56,7 @@ const phrases = [
     "Cybersecurity Student.",
     "Network Defender.",
     "System Investigator.",
-    "Future Security Analyst."
+    "Security Enthusiast."
 ];
 let currentPhraseIndex = 0;
 let isDeleting = false;
@@ -68,7 +68,7 @@ const delayBetweenPhrases = 2000;
 
 function typeEffect() {
     const currentPhrase = phrases[currentPhraseIndex];
-    
+
     if (isDeleting) {
         // Remove character
         typewriterElement.textContent = currentPhrase.substring(0, charIndex - 1);
@@ -98,20 +98,20 @@ function typeEffect() {
 
 // Start typing effect on load
 document.addEventListener('DOMContentLoaded', () => {
-    if(typewriterElement) {
+    if (typewriterElement) {
         setTimeout(typeEffect, 1000); // Initial delay
     }
 });
 
 // Simple form handling
-document.querySelector(".contact-form").addEventListener("submit", function(e) {
+document.querySelector(".contact-form").addEventListener("submit", function (e) {
     e.preventDefault();
     const btn = this.querySelector('button[type="submit"]');
     const originalText = btn.innerHTML;
-    
+
     // Loading state
     btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-    
+
     // Simulate API call
     setTimeout(() => {
         alert("Transmission Successful! Your message has been sent to Sarthak.");
@@ -143,3 +143,53 @@ document.querySelectorAll('.section').forEach(section => {
     section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
     observer.observe(section);
 });
+
+// Scroll to Top Button
+const scrollTopBtn = document.getElementById('scrollTopBtn');
+if (scrollTopBtn) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            scrollTopBtn.classList.add('show');
+        } else {
+            scrollTopBtn.classList.remove('show');
+        }
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+// Dark/Light Mode Toggle
+const themeToggleBtn = document.getElementById('themeToggle');
+const themeIcon = themeToggleBtn ? themeToggleBtn.querySelector('i') : null;
+
+// Check saved theme
+const savedTheme = localStorage.getItem('sarthak_theme') || 'light';
+document.documentElement.setAttribute('data-theme', savedTheme);
+updateThemeIcon(savedTheme);
+
+if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('sarthak_theme', newTheme);
+        updateThemeIcon(newTheme);
+    });
+}
+
+function updateThemeIcon(theme) {
+    if (!themeIcon) return;
+    if (theme === 'dark') {
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+    } else {
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+    }
+}
