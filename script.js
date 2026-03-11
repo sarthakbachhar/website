@@ -1,195 +1,174 @@
-// Navigation scroll effect
-const navbar = document.querySelector('.glass-nav');
-const mobileBtn = document.querySelector('.mobile-menu-btn');
-const navLinks = document.querySelector('.nav-links');
+﻿// ================================================================
+//  SARTHAK BACHHAR Portfolio Scripts
+// ================================================================
+(function () {
+    'use strict';
 
-// Add specific classes on scroll for styling
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
+    var nav       = document.getElementById('siteNav');
+    var toggle    = document.getElementById('mobileToggle');
+    var menu      = document.getElementById('navMenu');
+    var themeBtn  = document.getElementById('themeToggle');
+    var themeIcon = document.getElementById('themeIcon');
+    var scrollBtn = document.getElementById('scrollTopBtn');
+    var typed     = document.getElementById('typed');
+    var form      = document.getElementById('contactForm');
 
-    // Active link switching based on scroll position
-    let current = '';
-    const sections = document.querySelectorAll('section');
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
-            current = section.getAttribute('id');
+    // 1. NAVIGATION scroll shadow and active link
+    var allSections = document.querySelectorAll('section[id]');
+
+    function onScroll() {
+        var y = window.scrollY;
+        if (y > 40) { nav.classList.add('scrolled'); }
+        else { nav.classList.remove('scrolled'); }
+
+        if (scrollBtn) {
+            if (y > 500) { scrollBtn.classList.add('show'); }
+            else { scrollBtn.classList.remove('show'); }
         }
-    });
 
-    document.querySelectorAll('.nav-link').forEach(navLink => {
-        navLink.classList.remove('active');
-        if (navLink.getAttribute('href').includes(current)) {
-            navLink.classList.add('active');
+        var current = '';
+        for (var i = 0; i < allSections.length; i++) {
+            var sec = allSections[i];
+            if (y >= sec.offsetTop - sec.clientHeight / 3) {
+                current = sec.getAttribute('id');
+            }
         }
-    });
-});
-
-// Mobile menu toggle
-mobileBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    const icon = mobileBtn.querySelector('i');
-    if (navLinks.classList.contains('active')) {
-        icon.classList.remove('fa-bars');
-        icon.classList.add('fa-times');
-    } else {
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
-    }
-});
-
-// Close mobile menu when clicking a link
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        mobileBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
-    });
-});
-
-// Typewriter Effect for Hero Section
-const phrases = [
-    "Cybersecurity Student.",
-    "Network Defender.",
-    "System Investigator.",
-    "Security Enthusiast."
-];
-let currentPhraseIndex = 0;
-let isDeleting = false;
-let charIndex = 0;
-const typewriterElement = document.getElementById('typewriter');
-const typingSpeed = 100;
-const deletingSpeed = 50;
-const delayBetweenPhrases = 2000;
-
-function typeEffect() {
-    const currentPhrase = phrases[currentPhraseIndex];
-
-    if (isDeleting) {
-        // Remove character
-        typewriterElement.textContent = currentPhrase.substring(0, charIndex - 1);
-        charIndex--;
-    } else {
-        // Add character
-        typewriterElement.textContent = currentPhrase.substring(0, charIndex + 1);
-        charIndex++;
-    }
-
-    let timeoutSpeed = isDeleting ? deletingSpeed : typingSpeed;
-
-    // Logic for deciding next action
-    if (!isDeleting && charIndex === currentPhrase.length) {
-        // Finished typing phrase, wait then delete
-        timeoutSpeed = delayBetweenPhrases;
-        isDeleting = true;
-    } else if (isDeleting && charIndex === 0) {
-        // Finished deleting, move to next phrase
-        isDeleting = false;
-        currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
-        timeoutSpeed = 500; // Small pause before typing next
-    }
-
-    setTimeout(typeEffect, timeoutSpeed);
-}
-
-// Start typing effect on load
-document.addEventListener('DOMContentLoaded', () => {
-    if (typewriterElement) {
-        setTimeout(typeEffect, 1000); // Initial delay
-    }
-});
-
-// Simple form handling
-document.querySelector(".contact-form").addEventListener("submit", function (e) {
-    e.preventDefault();
-    const btn = this.querySelector('button[type="submit"]');
-    const originalText = btn.innerHTML;
-
-    // Loading state
-    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-
-    // Simulate API call
-    setTimeout(() => {
-        alert("Transmission Successful! Your message has been sent to Sarthak.");
-        this.reset();
-        btn.innerHTML = originalText;
-    }, 1500);
-});
-
-// Smooth reveal animation for sections on scroll
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px"
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-            observer.unobserve(entry.target);
+        var links = document.querySelectorAll('.nav-link');
+        for (var j = 0; j < links.length; j++) {
+            links[j].classList.remove('active');
+            if (links[j].getAttribute('href') === '#' + current) {
+                links[j].classList.add('active');
+            }
         }
-    });
-}, observerOptions);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
 
-// Set initial states for animation
-document.querySelectorAll('.section').forEach(section => {
-    section.style.opacity = '0';
-    section.style.transform = 'translateY(30px)';
-    section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-    observer.observe(section);
-});
-
-// Scroll to Top Button
-const scrollTopBtn = document.getElementById('scrollTopBtn');
-if (scrollTopBtn) {
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-            scrollTopBtn.classList.add('show');
-        } else {
-            scrollTopBtn.classList.remove('show');
-        }
-    });
-
-    scrollTopBtn.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+    // 2. MOBILE MENU
+    if (toggle && menu) {
+        toggle.addEventListener('click', function () {
+            toggle.classList.toggle('open');
+            menu.classList.toggle('open');
         });
-    });
-}
-
-// Dark/Light Mode Toggle
-const themeToggleBtn = document.getElementById('themeToggle');
-const themeIcon = themeToggleBtn ? themeToggleBtn.querySelector('i') : null;
-
-// Check saved theme
-const savedTheme = localStorage.getItem('sarthak_theme') || 'light';
-document.documentElement.setAttribute('data-theme', savedTheme);
-updateThemeIcon(savedTheme);
-
-if (themeToggleBtn) {
-    themeToggleBtn.addEventListener('click', () => {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('sarthak_theme', newTheme);
-        updateThemeIcon(newTheme);
-    });
-}
-
-function updateThemeIcon(theme) {
-    if (!themeIcon) return;
-    if (theme === 'dark') {
-        themeIcon.classList.remove('fa-moon');
-        themeIcon.classList.add('fa-sun');
-    } else {
-        themeIcon.classList.remove('fa-sun');
-        themeIcon.classList.add('fa-moon');
+        var navLinks = document.querySelectorAll('.nav-link');
+        for (var k = 0; k < navLinks.length; k++) {
+            navLinks[k].addEventListener('click', function () {
+                toggle.classList.remove('open');
+                menu.classList.remove('open');
+            });
+        }
     }
-}
+
+    // 3. TYPEWRITER EFFECT
+    var phrases = ['hunt threats.', 'analyze packets.', 'investigate incidents.', 'harden networks.'];
+    var phraseIdx = 0;
+    var charIdx = 0;
+    var deleting = false;
+
+    function tick() {
+        var phrase = phrases[phraseIdx];
+        if (!deleting) {
+            typed.textContent = phrase.substring(0, charIdx + 1);
+            charIdx++;
+            if (charIdx === phrase.length) { deleting = true; setTimeout(tick, 1800); return; }
+            setTimeout(tick, 90);
+            return;
+        }
+        typed.textContent = phrase.substring(0, charIdx - 1);
+        charIdx--;
+        if (charIdx === 0) {
+            deleting = false;
+            phraseIdx = (phraseIdx + 1) % phrases.length;
+            setTimeout(tick, 400);
+            return;
+        }
+        setTimeout(tick, 45);
+    }
+    if (typed) { setTimeout(tick, 900); }
+
+    // 4. THEME TOGGLE
+    var savedTheme = localStorage.getItem('sb_theme');
+    var currentTheme = savedTheme || 'light';
+
+    function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        if (themeIcon) {
+            themeIcon.className = (theme === 'dark') ? 'fas fa-sun' : 'fas fa-moon';
+        }
+    }
+    applyTheme(currentTheme);
+
+    if (themeBtn) {
+        themeBtn.addEventListener('click', function () {
+            currentTheme = (currentTheme === 'dark') ? 'light' : 'dark';
+            applyTheme(currentTheme);
+            localStorage.setItem('sb_theme', currentTheme);
+        });
+    }
+
+    // 5. SCROLL TO TOP
+    if (scrollBtn) {
+        scrollBtn.addEventListener('click', function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    // 6. CONTACT FORM
+    if (form) {
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var btn = form.querySelector('button[type="submit"]');
+            var original = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> Sending...';
+            btn.disabled = true;
+            setTimeout(function () {
+                alert('Message sent! Thanks for reaching out.');
+                form.reset();
+                btn.innerHTML = original;
+                btn.disabled = false;
+            }, 1400);
+        });
+    }
+
+    // 7. SCROLL REVEAL ANIMATIONS
+    var targets = document.querySelectorAll(
+        '.section-heading, .about-layout, .skill-card, .tl-entry, .project-card, .cert-card, .contact-grid, .edu-card'
+    );
+    for (var r = 0; r < targets.length; r++) { targets[r].classList.add('reveal'); }
+
+    var revealObs = new IntersectionObserver(function (entries) {
+        for (var e = 0; e < entries.length; e++) {
+            if (entries[e].isIntersecting) {
+                entries[e].target.classList.add('visible');
+                revealObs.unobserve(entries[e].target);
+            }
+        }
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    var reveals = document.querySelectorAll('.reveal');
+    for (var v = 0; v < reveals.length; v++) { revealObs.observe(reveals[v]); }
+
+    // Stagger grid children
+    var grids = document.querySelectorAll('.skills-grid, .projects-grid, .certs-grid');
+    for (var g = 0; g < grids.length; g++) {
+        var children = grids[g].children;
+        for (var c = 0; c < children.length; c++) {
+            children[c].style.transitionDelay = (c * 0.08) + 's';
+        }
+    }
+
+    // 8. TERMINAL TYPING ANIMATION
+    var termLines = document.querySelectorAll('.terminal-body .tline');
+    for (var t = 0; t < termLines.length; t++) {
+        (function (line, index) {
+            line.style.opacity = '0';
+            line.style.transform = 'translateY(6px)';
+            line.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+            setTimeout(function () {
+                line.style.opacity = '1';
+                line.style.transform = 'translateY(0)';
+            }, 600 + index * 250);
+        })(termLines[t], t);
+    }
+
+})();
