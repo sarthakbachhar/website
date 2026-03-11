@@ -1112,61 +1112,227 @@ strong { color: var(--heading); }
 /* ================================================================
    RESPONSIVE
    ================================================================ */
+
+/* ---------- Tablet landscape & small desktops ---------- */
 @media (max-width: 1024px) {
-    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
     .hero-visual { display: none; }
+    .hero-desc { margin-left: auto; margin-right: auto; }
+    .hero-actions { justify-content: center; }
+    .hero-badge { margin-left: auto; margin-right: auto; }
+
     .about-layout { grid-template-columns: 1fr; }
     .skills-grid { grid-template-columns: repeat(2, 1fr); }
     .contact-grid { grid-template-columns: 1fr; }
+
+    .section-heading { font-size: clamp(1.6rem, 3.5vw, 2.4rem); }
 }
 
+/* ---------- Tablets & large phones ---------- */
 @media (max-width: 768px) {
-    .section { padding: 72px 0; }
+    .container { padding: 0 20px; }
+    .section { padding: 64px 0; }
 
+    /* Nav mobile drawer */
     .mobile-toggle { display: flex; }
 
     .nav-menu {
         position: fixed;
         top: 64px; right: -100%;
-        width: 260px;
+        width: 280px;
         height: calc(100vh - 64px);
+        height: calc(100dvh - 64px);
         background: var(--surface);
         border-left: 1px solid var(--border);
         flex-direction: column;
-        padding: 32px 20px;
+        padding: 28px 20px;
         transition: right 0.35s var(--ease);
         align-items: flex-start;
         gap: 20px;
         box-shadow: var(--shadow-lg);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
     }
     .nav-menu.open { right: 0; }
+
     .nav-list {
         flex-direction: column;
         width: 100%;
-        gap: 4px;
+        gap: 2px;
     }
     .nav-link {
         display: block;
-        padding: 10px 14px;
+        padding: 12px 16px;
         width: 100%;
+        font-size: 0.95rem;
+        border-radius: 8px;
     }
-    .nav-link--cta { margin-left: 0; text-align: center; }
+    .nav-link--cta {
+        margin-left: 0;
+        margin-top: 8px;
+        text-align: center;
+    }
 
-    .hero-heading { font-size: 2.2rem; }
-    .hero-actions { flex-wrap: wrap; }
+    .theme-switch {
+        margin-left: 0;
+        margin-top: 8px;
+    }
 
-    .tl-top { flex-direction: column; }
-    .timeline { padding-left: 32px; }
-    .tl-marker { left: -25px; width: 12px; height: 12px; }
-    .timeline::before { left: 8px; }
+    /* Hero */
+    .hero { min-height: auto; padding-top: 100px; padding-bottom: 60px; }
+    .hero-heading { font-size: clamp(1.8rem, 6vw, 2.6rem); }
+    .hero-desc { font-size: 1rem; }
+    .hero-actions { flex-direction: column; gap: 20px; }
+    .hero-socials { justify-content: center; }
+    .scroll-indicator { display: none; }
 
-    .about-stats { flex-wrap: wrap; gap: 24px; }
+    /* About */
+    .about-stats { flex-wrap: wrap; gap: 24px; justify-content: center; }
+    .about-text { text-align: left; }
+    .edu-card { padding: 24px; }
+
+    /* Experience */
+    .tl-top { flex-direction: column; gap: 8px; }
+    .timeline { padding-left: 30px; }
+    .tl-marker { left: -23px; width: 12px; height: 12px; }
+    .timeline::before { left: 7px; }
+    .tl-card { padding: 22px; }
+    .tl-role { font-size: 1.05rem; }
+
+    /* Projects */
+    .projects-grid { grid-template-columns: 1fr; gap: 20px; }
+    .project-card { padding: 24px; }
+
+    /* Contact */
     .form-row { grid-template-columns: 1fr; }
+    .contact-form { padding: 24px; }
+    .contact-info { padding: 24px; }
+
+    /* Footer */
+    .footer-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
 }
 
+/* ---------- Small phones ---------- */
 @media (max-width: 576px) {
-    .skills-grid { grid-template-columns: 1fr; }
-    .projects-grid { grid-template-columns: 1fr; }
-    .certs-grid { grid-template-columns: 1fr; }
-    .about-stats { flex-direction: column; text-align: center; }
+    .container { padding: 0 16px; }
+    .section { padding: 52px 0; }
+
+    .nav-inner { padding: 0 16px; }
+
+    .hero { padding-top: 88px; padding-bottom: 48px; }
+    .hero-heading { font-size: 1.6rem; letter-spacing: -0.02em; }
+    .hero-badge { font-size: 0.72rem; padding: 5px 12px 5px 8px; }
+    .hero-desc { font-size: 0.92rem; line-height: 1.65; }
+    .btn { padding: 11px 22px; font-size: 0.85rem; }
+
+    /* About */
+    .section-heading { font-size: 1.5rem; margin-bottom: 32px; }
+    .section-label { font-size: 0.72rem; }
+    .about-lead { font-size: 1rem; }
+    .about-stats {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+    .stat-val { font-size: 1.5rem; }
+
+    /* Skills */
+    .skills-grid { grid-template-columns: 1fr; gap: 16px; }
+    .skill-card { padding: 22px; }
+    .skill-header { gap: 10px; margin-bottom: 18px; padding-bottom: 12px; }
+    .skill-header i { font-size: 1.2rem; }
+    .skill-header h3 { font-size: 0.92rem; }
+    .skill-items li { font-size: 0.85rem; margin-bottom: 8px; }
+    .tool-pills { gap: 6px; }
+    .pill { padding: 5px 10px; font-size: 0.78rem; }
+
+    /* Experience */
+    .timeline { padding-left: 26px; }
+    .tl-marker { left: -20px; width: 10px; height: 10px; border-width: 2px; }
+    .timeline::before { left: 6px; }
+    .tl-card { padding: 18px; }
+    .tl-role { font-size: 1rem; }
+    .tl-company { font-size: 0.88rem; }
+    .tl-details li { font-size: 0.85rem; }
+
+    /* Projects */
+    .project-card { padding: 20px; }
+    .project-card h3 { font-size: 1rem; }
+    .project-icon { font-size: 1.6rem; }
+    .project-desc { font-size: 0.85rem; }
+    .project-tags span { font-size: 0.68rem; }
+
+    /* Certs */
+    .certs-grid { grid-template-columns: 1fr; gap: 12px; }
+    .cert-card { padding: 16px 18px; gap: 14px; }
+    .cert-icon { width: 40px; height: 40px; font-size: 1rem; }
+    .cert-card h4 { font-size: 0.88rem; }
+    .cert-card p { font-size: 0.75rem; }
+
+    /* Contact */
+    .contact-intro { font-size: 0.92rem; margin-top: -20px; margin-bottom: 32px; }
+    .contact-info { padding: 20px; }
+    .contact-info h3 { font-size: 1.1rem; }
+    .contact-form { padding: 20px; }
+    .form-field input,
+    .form-field textarea { padding: 10px 12px; font-size: 0.85rem; }
+    .form-field label { font-size: 0.72rem; }
+
+    /* Footer */
+    .footer-inner { gap: 10px; padding: 0 16px; }
+    .footer-logo { font-size: 1rem; }
+    .footer-copy { font-size: 0.75rem; }
+    .footer-links { gap: 16px; }
+    .footer-links a { font-size: 0.8rem; }
+
+    /* Scroll-to-top */
+    .scroll-top { width: 40px; height: 40px; bottom: 20px; right: 20px; font-size: 0.9rem; }
+}
+
+/* ---------- Very small phones (SE, Galaxy Fold etc.) ---------- */
+@media (max-width: 380px) {
+    .hero-heading { font-size: 1.4rem; }
+    .hero-desc { font-size: 0.85rem; }
+    .hero-badge { font-size: 0.68rem; }
+    .btn { padding: 10px 18px; font-size: 0.82rem; }
+    .section { padding: 44px 0; }
+    .section-heading { font-size: 1.35rem; margin-bottom: 28px; }
+    .edu-card { padding: 18px; }
+    .edu-card h3 { font-size: 1rem; }
+    .edu-tags span { font-size: 0.7rem; padding: 3px 10px; }
+}
+
+/* ---------- Touch & hover safety ---------- */
+@media (hover: none) {
+    .skill-items li:hover { transform: none; }
+    .project-card:hover { transform: none; box-shadow: none; }
+    .tl-card:hover { transform: none; box-shadow: none; }
+    .cert-card:hover { transform: none; }
+    .edu-card:hover { transform: none; }
+    .hero-socials a:hover { transform: none; }
+    .contact-socials a:hover { transform: none; }
+}
+
+/* ---------- Landscape phones ---------- */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero { min-height: auto; padding-top: 80px; padding-bottom: 40px; }
+    .scroll-indicator { display: none; }
+}
+
+/* ---------- Prefer reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+    .reveal { opacity: 1; transform: none; }
 }
